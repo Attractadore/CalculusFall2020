@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+
+\title{Экзаменационная программа по курсу «Введение в математический анализ», осенний семестр 2020–2021 учебного года}
+\date{}
+
+\begin{document}
+    \maketitle
+    \pagenumbering{gobble}
+
+    \newpage
+    \pagenumbering{arabic}
+
+    \section{}
+    \subsection*{Действительные  числа}
+        \subsubsection*{Дедекиндовы сечения}
+        Сечение множества рациональных чисел $\mathbb{Q}$ $(A_*, A^*)$ -- разбиение $\mathbb{Q}$ на два таких непустых множества $A_*$ и $A^*$, таких, что:
+        \begin{itemize}
+            \item $A_* \cup A^* = \mathbb{Q}$
+            \item $A_* \cap A^* = \emptyset$
+            \item $\forall x \in A_*, \forall y \in A^* \longmapsto y > x$
+        \end{itemize}
+        \subsubsection*{Иррациональные числа}
+        В сечении вида {\large \textcircled{\small A}} $A_*$ не имеет наибольшего элемента, а $A^*$ имеет наименьший.
+        В сечении вида {\large \textcircled{\small B}} $A_*$ имеет наибольший элемент, а $A^*$ не имеет наименьшего.
+        В сечении вида {\large \textcircled{\small C}} $A_*$ не имеет наибольшего элемента, а $A^*$ не имеет наименьшего.
+        \\
+        Иррациональным числом называется сечение вида \textcircled{C}.
+        
+        \subsubsection*{Действительные числа}
+        Действительным числом называется любое сечение множества $\mathbb{Q}$ вида {\large \textcircled{\small A}} или {\large \textcircled{\small C}}.
+        
+        \subsubsection*{Упорядоченность, плотность и непрерывность действительных чисел}
+        Пусть $\alpha, \beta \in \mathbb{R}, \alpha = (A_*, A^*), \beta = (B_*, B^*)$
+        \\
+        $\alpha = \beta$ если $A_* = B_*$
+        \\     
+        \\
+        Предложение:
+        \\
+        Если $\alpha, \beta \in \mathbb{R}, \alpha \neq \beta$, то имеет место одно из включений: $A_* \subset B_*$ либо $A_* \supset B_*$
+        \\
+        Доказательство:
+        \\
+        От противного:
+        \\
+        Пусть $A_* \not\subset B_*$ и $A_* \not\supset B_*$ 
+        \\
+        Тогда $\exists a \in \mathbb{Q}: a \in A_* \wedge a \notin B_* \implies a \in B^*$
+        и $\exists b \in \mathbb{Q}: b \notin A_* \wedge b \in B_* \implies b \in A^*$
+        \\
+        так как $a \neq b$
+        \\
+        $a \in A_*, b \in A^* \implies b > a$
+        \\
+        $b \in B_*, a \in B^* \implies a > b$
+        \\
+        противоречие
+        \\
+        \\
+        Пусть $\alpha, \beta \in \mathbb{R}, \alpha = (A_*, A^*), \beta = (B_*, B^*)$
+        \\
+        $\alpha < \beta$ если $A_* \neq B_* \wedge A_* \subset B_*$
+        \\
+        \\
+        Упорядоченность $\mathbb{R}$:
+        \\
+        $\forall \alpha, \beta \in \mathbb{R}$ имеет место либо $\alpha = \beta$, либо $\alpha < \beta$,  либо $\alpha > \beta$.
+        \\
+        $ \alpha = \beta, \beta = \gamma \implies \alpha = \gamma$
+        \\
+        $ \alpha < \beta, \beta < \gamma \implies \alpha < \gamma$
+        \\
+        \\
+        Плотность $\mathbb{Q}$ в $\mathbb{R}$:
+        \\
+        Пусть $\alpha, \beta \in \mathbb{R}, \alpha < \beta$, тогда $\exists c \in \mathbb{Q}: \alpha < c < \beta$
+        \\
+        Доказательство:
+        \\
+        $\alpha < \beta \implies A_* \subset B_* \implies \exists c \in \mathbb{Q}: c \in B_* \wedge c \notin A_*$.
+        \\
+        Так как в нижнем классе нет наибольшего элемента, $\alpha \le c < \beta$.
+        \\
+        Если $\alpha \in \mathbb{I}$, то $c \neq \alpha \implies \alpha < c < \beta$.
+        Eсли $\alpha \in \mathbb{Q}$, то можно взять $c \in B_*: c > \alpha$. 
+        \\
+        \\
+        Сечение множества действительных чисел $\mathbb{R}$ $(\mathcal{A_*}, \mathcal{A^*})$ --
+        разбиение $\mathbb{Q}$ на два таких непустых множества $\mathcal{A_*}$ и $\mathcal{A^*}$, таких, что:
+        \begin{itemize}
+            \item $\mathcal{A_*} \cup \mathcal{A^*} = \mathbb{R}$
+            \item $\mathcal{A_*} \cap \mathcal{A^*} = \emptyset$
+            \item $\forall x \in \mathcal{A_*}, \forall y \in \mathcal{A^*} \longmapsto y > x$
+        \end{itemize}
+        \mbox{}
+        \\
+        Теорема Дедекинда:
+        \\
+        Среди сечений множества $\mathbb{R}$ сечений вида {\large \textcircled{\small C}} нет $\implies$ непрерывность $\mathbb{R}$.\
+        
+        
+    \subsection*{Теорема  о  существовании  и  единственности точной верхней (нижней) грани числового множества, ограниченного сверху (снизу)}
+        Множество $X$ ограничено сверху, если $\exists C \in \mathbb{R}: \forall x \in X \longmapsto x \le C$
+        \\
+        \\
+        Число $M$ называется верхней гранью множества $X$, если $\forall x \in X \longmapsto x \le M$
+        \\
+        \\
+        Число $\alpha = \sup X$ называется точной верхней гранью множества $X$, если $\forall x \in X \longmapsto x \le \alpha \wedge \forall \alpha' \exists x \in X: x > \alpha'$.
+        \\
+        \\
+        Лемма: если множество $X \subset \mathbb{R}$ имеет наибольший элемент $M = \max X$, то $M = \sup X$.
+        \\
+        Доказательство:
+        \\
+        Так как $M$ -- наибольший элемент $X$, то все остальные элементы $X$ меньше $M$ и не являются верхней гранью $X$, так как
+        $M \in X$ и $M > x$. Следовательно, $M$ -- точная верхняя грань $X$.
+        \\
+        \\
+        Теорема: для ограниченного сверху множества $X \subset \mathbb{R}$ существует единственная точная верхняя грань.
+        \\
+        Доказательство:
+        \\
+        Если в $X$ есть наибольший элемент, то $\alpha$ равно ему.
+        Есть в $X$ наибольшего элемента нет, то построим сечение $(\mathcal{A_*}, \mathcal{A^*})$, такое, что в $\mathcal{A^*}$ содержатся все верхние грани $X$,
+        а в $\mathcal{A_*}$ -- все остальные числа, при этом множество $\mathcal{A^*}$ не пусто, так как $X$ ограничено сверху,
+        а $X \subset \mathcal{A_*}$, так как если элемент из $X \in \mathcal{A^*}$, то он является максимальным.
+        По теореме Дедекинда, если либо больший элемент в $\mathcal{A_*}$, либо меньший в $\mathcal{A^*}$.
+        Если в $\mathcal{A_*}$ есть наибольший элемент, то он является верхней гранью $X$ -- противоречие. Следовательно есть наименьший элемент в $\mathcal{A^*}$,
+        который по определению является точной верхней гранью $X$.
+        \\
+        Теперь докажем единственность точной верхней грани.
+        Пусть $\alpha, \alpha'$ -- точные верхние грани множества $X$, $\alpha' < \alpha$. Так как $\alpha$ -- точная верхняя грань,
+        $\forall \beta < \alpha \exists x \in X: x > \beta \implies \exists x' \in X: x' > {\alpha'} \implies \alpha' \neq \sup X$.
+        
+        
+    \subsection*{Счетность множества рациональных чисел}
+        Докажем счетность множества полжительных рациональных чисел.
+        \\ 
+        Пусть $H \ge 2 \in \mathbb{N}$. Рассмотрим все взаимно простые пары чисел $p, q \in {N}$, такие что $p + q = H$, и соответствующие им рациональные числа.
+        Понятно, что таких пар конечное число, и таким образом представляется любое рациональное число.
+        \\
+        Теперь расставим соответствующие каждому $H$ рациональные числа по порядку и пронумеруем их:
+        \\
+        $\frac{1, 1}, \frac{1, 2}, \frac{2, 1}, \frac{1, 3}, \frac{3, 1}, \frac{1, 4}, \frac{2, 3}, \frac{3, 2}, \frac{4, 1}, ...$
+        \\
+        Так как множество положительных рациональных чисел счетно, то и аналогичным образом счетно множество отрицательных рациональных чисел,
+        а их объединение в объединении вместе с конечным множетсвом, состоящим из $0$, так же счетно и является $\mathbb{R}$.
+        
+    \subsection*{Несчетность множества действительных чисел}
+        Если подмножество множества несчетно, то и само оно несчетно.
+        \\
+        Рассмотрим числа на интервале $(0;1)$, представленные в виде десятичных дробей:
+        \\
+        $\alpha_1 = 0,a_1^1a_2^1...a_n^1...$
+        \\
+        $\alpha_2 = 0,a_1^2a_2^2...a_n^2...$
+        \\
+        ...
+        \\
+        $\alpha_k = 0,a_1^ka_2^k...a_n^k...$
+        \\
+        ...
+        \\
+        Допустим, что подмножество $(0;1)$ счетно.
+        \\
+        Построим число $\gamma$ такое, что $\gamma = 0,c_1c_2...c_n...$; $c_i \neq a_i^i, c_i \neq 9$. $\gamma$ не равно ни одному из $a_i$,
+        что противоречит тому, что $(0;1)$ счетно. Следовательно, само множество действительных чисел также счетно.
+        
+    \newpage
+
+    \section{}
+    \newpage
+
+\end{document}
