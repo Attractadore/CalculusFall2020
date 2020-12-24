@@ -2,7 +2,9 @@
 \usepackage[english,russian]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{geometry}
+\usepackage{setspace}
 \geometry{a4paper, portrait, margin=1in}
 
 \title{Экзаменационная программа по курсу «Введение в математический анализ», осенний семестр 2020–2021 учебного года}
@@ -14,6 +16,8 @@
 
     \newpage
     \pagenumbering{arabic}
+    
+    \onehalfspacing
 
     \section{}
     \subsection*{Действительные  числа}
@@ -21,7 +25,7 @@
         Сечение множества рациональных чисел $\mathbb{Q}$ $(A_*, A^*)$ -- разбиение $\mathbb{Q}$ на два таких непустых множества $A_*$ и $A^*$, таких, что:
         \begin{itemize}
             \item $A_* \cup A^* = \mathbb{Q}$
-            \item $A_* \cap A^* = \emptyset$
+            \item $A_* \cap A^* = \varnothing$
             \item $\forall x \in A_*, \forall y \in A^* \longmapsto y > x$
         \end{itemize}
         \subsubsection*{Иррациональные числа}
@@ -44,11 +48,8 @@
         \\
         Если $\alpha, \beta \in \mathbb{R}, \alpha \neq \beta$, то имеет место одно из включений: $A_* \subset B_*$ либо $A_* \supset B_*$
         \\
-        Доказательство:
-        \\
-        От противного:
-        \\
-        Пусть $A_* \not\subset B_*$ и $A_* \not\supset B_*$ 
+        \textbf{Доказательство:}
+        пусть $A_* \not\subset B_*$ и $A_* \not\supset B_*$ 
         \\
         Тогда $\exists a \in \mathbb{Q}: a \in A_* \wedge a \notin B_* \implies a \in B^*$
         и $\exists b \in \mathbb{Q}: b \notin A_* \wedge b \in B_* \implies b \in A^*$
@@ -80,8 +81,7 @@
         \\
         Пусть $\alpha, \beta \in \mathbb{R}, \alpha < \beta$, тогда $\exists c \in \mathbb{Q}: \alpha < c < \beta$
         \\
-        Доказательство:
-        \\
+        \textbf{Доказательство:}
         $\alpha < \beta \implies A_* \subset B_* \implies \exists c \in \mathbb{Q}: c \in B_* \wedge c \notin A_*$.
         \\
         Так как в нижнем классе нет наибольшего элемента, $\alpha \le c < \beta$.
@@ -94,7 +94,7 @@
         разбиение $\mathbb{Q}$ на два таких непустых множества $\mathcal{A_*}$ и $\mathcal{A^*}$, таких, что:
         \begin{itemize}
             \item $\mathcal{A_*} \cup \mathcal{A^*} = \mathbb{R}$
-            \item $\mathcal{A_*} \cap \mathcal{A^*} = \emptyset$
+            \item $\mathcal{A_*} \cap \mathcal{A^*} = \varnothing$
             \item $\forall x \in \mathcal{A_*}, \forall y \in \mathcal{A^*} \longmapsto y > x$
         \end{itemize}
         \mbox{}
@@ -123,19 +123,17 @@
         Число $\alpha = \sup X$ называется точной верхней гранью множества $X$, если $\forall x \in X \longmapsto x \le \alpha \wedge \forall \alpha' \exists x \in X: x > \alpha'$.
         \\
         \\
-        Лемма: если множество $X \subset \mathbb{R}$ имеет наибольший элемент $M = \max X$, то $M = \sup X$.
+        \textbf{Лемма:} если множество $X \subset \mathbb{R}$ имеет наибольший элемент $M = \max X$, то $M = \sup X$.
         \\
-        Доказательство:
-        \\
-        Так как $M$ -- наибольший элемент $X$, то все остальные элементы $X$ меньше $M$ и не являются верхней гранью $X$, так как
+        \textbf{Доказательство:}
+        так как $M$ -- наибольший элемент $X$, то все остальные элементы $X$ меньше $M$ и не являются верхней гранью $X$, так как
         $M \in X$ и $M > x$. Следовательно, $M$ -- точная верхняя грань $X$.
         \\
         \\
-        Теорема: для ограниченного сверху множества $X \subset \mathbb{R}$ существует единственная точная верхняя грань.
+        \textbf{Теорема:} для ограниченного сверху множества $X \subset \mathbb{R}$ существует единственная точная верхняя грань.
         \\
-        Доказательство:
-        \\
-        Если в $X$ есть наибольший элемент, то $\alpha$ равно ему.
+        \textbf{Доказательство:}
+        если в $X$ есть наибольший элемент, то $\alpha$ равно ему.
         Есть в $X$ наибольшего элемента нет, то построим сечение $(\mathcal{A_*}, \mathcal{A^*})$, такое, что в $\mathcal{A^*}$ содержатся все верхние грани $X$,
         а в $\mathcal{A_*}$ -- все остальные числа, при этом множество $\mathcal{A^*}$ не пусто, так как $X$ ограничено сверху,
         а $X \subset \mathcal{A_*}$, так как если элемент из $X \in \mathcal{A^*}$, то он является максимальным.
@@ -161,6 +159,7 @@
         Так как множество положительных рациональных чисел счетно, то и аналогичным образом счетно множество отрицательных рациональных чисел,
         а их объединение в объединении вместе с конечным множетсвом, состоящим из $0$, так же счетно и является $\mathbb{R}$.
         
+        
     \subsection*{Несчетность множества действительных чисел}
         Если подмножество множества несчетно, то и само оно несчетно.
         \\
@@ -184,6 +183,220 @@
     \newpage
 
     \section{}
+    \subsection*{Бесконечно малые и бесконечно большие последовательности и их свойства}
+        Последовательность $\{x_n\}$ называется бесконечно большой, если:
+        \[ \forall M > 0 \exists N = N(M): \forall n \ge N \longmapsto |x_n| > M \]
+        Последовательность $\{x_n\}$ называется бесконечно малой, если:
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_n| < \epsilon \]
+        \textbf{Теорема:} сумма двух бесконечно маллых последовательностей также является бесконечно малой.
+        \\
+        \textbf{Доказательство:}
+        пусть последовательности $\{x_n\}$ и $\{y_n\}$ -- бесконечно малые:
+        \[ \forall \epsilon > 0 \exists N_x = N_x(\epsilon): \forall n \ge N_x \longmapsto |x_n| < \frac{\epsilon}{2} \]
+        \[ \forall \epsilon > 0 \exists N_y = N_y(\epsilon): \forall n \ge N_y \longmapsto |y_n| < \frac{\epsilon}{2} \]
+        \[ \forall \epsilon > 0 \exists N = \max (N_x(\epsilon), N_y(\epsilon)): \forall n \ge N \longmapsto |x_n| < \frac{\epsilon}{2} \wedge |y_n| < \frac{\epsilon}{2} \]
+        \[ |x_n + y_n| \le |x_n| + |y_n| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \]
+        следовательно, $\{x_n\} + \{y_n\}$ -- также бесконечно малая последовательность.
+        \\
+        \\
+        \textbf{Теорема:} бесконечно малая последовательность ограничена.
+        \\
+        \textbf{Доказательство:}
+        пусть последовательность $\{x_n\}$ -- бесконечно малая:
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_n| < \epsilon \]
+        Возьмем произвольное $\epsilon_0$. Тогда $\forall n \ge N(\epsilon_0) \longmapsto |x_n| < \epsilon_0$.
+        Выберем среди первых $N(\epsilon_0)$ членов последовательности максимальный по модулю и обозначим его модуль за $\epsilon_1$.
+        Тогда $\forall x: 1 \le x \le N(\epsilon_0) \longmapsto |x_n| \le \epsilon_1$.
+        Следовательно, $\forall n \in \mathbb{N} \longmapsto |x_n| \le \epsilon = \max(\epsilon_0, \epsilon_1) \implies \{x_n\}$ ограничена.
+        \\
+        \\
+        \textbf{Теорема:} произведение бесконечно малой и ограниченной последовательностей -- бесконечно малая последовательность.
+        \\
+        \textbf{Доказательство:}
+        пусть $\{x_n\}$ -- ограниченная последовательность, $\{y_n\}$ -- бесконечно малая:
+        \[ \exists C > 0: \forall n \longmapsto |x_n| \le C \]
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |y_n| < \frac{\epsilon}{C} \]
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_ny_n| \le C|y_n| < \epsilon \]
+        \\
+        \\
+        \textbf{Теорема:} произведение двух бесконечно малых последовательностей -- бесконечно малая последовательность.
+        \\
+        \textbf{Доказательство:}
+        Любая бесконечно малая последовательность ограничена, следовательно произведение двух бесконечно малых последовательностей -- бесконечно
+        малая, как и произведение бесконечно малой и ограниченной.
+        \\
+        \\
+        \textbf{Теорема:} если все члены бесконечно малой последовательности с какого-то номера равны $\gamma$, то $\gamma = 0$.
+        \\
+        \textbf{Доказательство:}
+        пусть $\gamma \neq 0$. Последовательность $\{x_n\}$ бесконечно мала, возьмем $\epsilon_0 = |\gamma|$ и проверим для него условие:
+        \[ \exists N = N(\gamma): \forall n \ge N \longmapsto |\gamma| < |\gamma| \]
+        получается противоречие.
+        \\
+        \\
+        \textbf{Теорема:} если последовательность $\{x_n\}$ -- бесконечно большая, то с какого-то номера определена бесконечно малая последовательность $\{y_n\} = \{\frac{1}{x_n}\}$.
+        \\
+        \textbf{Доказательство:}
+        так как $\{x_n\}$ -- бесконечно большая:
+        \[ \forall M > 0 \exists N = N(M): \forall n \ge N \longmapsto |x_n| > \frac{1}{M} \implies \frac{1}{|x_n|} < {M}\]
+        Следовательно $\{y_n\}$ -- бесконечно малая.
+        \\
+        \\
+        \textbf{Теорема:} если последовательность $\{x_n\}$ -- ограниченная, а $\{y_n\}$ -- бесконечно большая,
+        то с какого-то номера определена бесконечно малая последовательность $\{z_n\} = \{\frac{x_n}{y_n}\}$.
+        \\
+        \textbf{Доказательство:}
+        так как $\{y_n\}$ -- бесконечно большая, $\{y'_n\}$, где $y'_n = \frac{1}{y_n}$, -- бесконечно малая. Тогда $\{z_n\}$ -- бесконечно малая как
+        произведение бесконечно малой и ограниченной.
+        \\
+        \\
+        \textbf{Теорема:} если последовательность $\{|x_n|\}$ ограничена снизу $c > 0$, а $\{y_n\}$ -- бесконечно малая и $y_n \neq 0 \forall n$,
+        то $\{z_n\} = \{\frac{x_n}{y_n}\}$ -- бесконечно большая.
+        \\
+        \textbf{Доказательство:}
+        так как $\{y_n\}$ -- бесконечно малая:
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |y_n| < \frac{1}{\epsilon} \implies \frac{1}{|y_n|} > {\epsilon}\]
+        Следовательно $\{y_n\}$ -- бесконечно большая. $ |x_ny_n| > C|y_n| > \epsilon $, следовательно $\{z_n\}$ -- бесконечно большая.
+    
+    
+    \subsection*{Предел числовой последовательности}
+        Последовательность $\{x_n\}$ сходится к $a$, если последовательность $\{y_n\}$, где $y_n = x_n - a$, бесконечно мала.
+        \\
+        Число $a = \lim_{x\to\infty} x_n$ называется пределом последовательности $\{x_n\}$, если:
+        \\
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_n - a| < \epsilon \]
+    
+    
+    \subsection*{Единственность предела}
+        \textbf{Доказательство:}
+        пусть $a_1$ -- предел последовательности $\{x_n\}$ и $a_2$ -- предел $\{x_n\}$. Тогда:
+        \[ \forall \epsilon > 0 \exists N_1 = N_1(\epsilon): \forall n \ge N_1 \longmapsto |x_n - a_1| < \epsilon \]
+        \[ \forall \epsilon > 0 \exists N_2 = N_2(\epsilon): \forall n \ge N_2 \longmapsto |x_n - a_2| < \epsilon \]
+        \[ \forall \epsilon > 0 \exists N = \max (N_1(\epsilon), N_2(\epsilon)): \forall n \ge N \longmapsto
+        x_n \in (a_1 - \epsilon; a_1 + \epsilon) \cap (a_2 - \epsilon; a_2 + \epsilon) \]
+        При $\epsilon \le \frac{a_1 + a_2}{2}$ $(a_1 - \epsilon; a_1 + \epsilon) \cap (a_2 - \epsilon; a_2 + \epsilon) = \varnothing$ -- противоречие.
+    
+    \subsection*{Арифметические операции со сходящимися последовательностями}
+        \textbf{Теорема:} если последовательность $\{x_n\}$ сходится к $a$, а $\{y_n\}$ -- к $b$, то их сумма $\{z_n\} = \{x_n\} + \{y_n\}$ сходится к $a + b$.
+        \\
+        \textbf{Доказательство:}
+        $x_n = a_n + a$, $y_n = b_n + b$, где $\{a_n\}$ и $\{b_n\}$ -- бесконечно малые последовательности.
+        Последовательность $\{c_n\}$, где $c_n = x_n - a + y_n - b = a_n + b_n$, -- бесконечно мала, следовательно
+        $a + b$ -- предел $\{z_n\}$
+        \\
+        \\
+        \textbf{Теорема:} если последовательность $\{x_n\}$ сходится к $a$, а $\{y_n\}$ -- к $b$, то их произведение $\{z_n\} = \{x_n\} \cdot \{y_n\}$ сходится к $ab$.
+        \\
+        \textbf{Доказательство:}
+        $x_n = a_n + a$, $y_n = b_n + b$, где $\{a_n\}$ и $\{b_n\}$ -- бесконечно малые последовательности.
+        Последовательность $\{c_n\}$, где $c_n = x_n y_n - ab = (a_n + a) (b_n + b) - ab = a_n b_n + b a_n + a b_n $, -- бесконечно мала, следовательно
+        $ab$ -- предел $\{z_n\}$
+        \\
+        \\
+        \textbf{Теорема:} если последовательность $\{x_n\}$ сходится к $a$, а $\{y_n\}$ -- к $b \neq 0$, то с какого-то номера
+        определена последовательность их частного $\{z_n\} = \frac{\{x_n\}}{\{y_n\}}$, которая сходится к $\frac{a}{b}$.    
+        \\
+        \textbf{Доказательство:}
+        $x_n = a_n + a$, $y_n = b_n + b$, где $\{a_n\}$ и $\{b_n\}$ -- бесконечно малые последовательности.
+        \\
+        Докажем сначала существование $\{z_n\}$. Пусть $\epsilon_0 = \frac{|b|}{2}$.
+        \[ \exists N = N(\epsilon_0): \forall n \ge N \longmapsto |y_n - b| < \frac{|b|}{2} \]
+        \[ \frac{|b|}{2} < y_n < \frac{3|b|}{2} \]
+        \[ \frac{1}{y_n} < \frac{2}{|b|} \]
+        Видно, что $\{y_n\}$ с $N(\epsilon_0)$ не равна $0$, и что последовательность $\{\frac{1}{y_n}\}$ ограничена.
+        \\
+        Последовательность $\{c_n\}$, где $c_n = \frac{x_n}{y_n} - \frac{a}{b} = \frac{a_n + a}{b_n + b} - \frac{a}{b} =
+        \frac{b a_n + ab - ab - a b_n}{b(b_n + b)} = \frac{1}{b_n + b}(a_n - \frac{a}{b} b_n)$, -- бесконечно мала как произведение ограниченной
+        и бесконечно малой, следовательно $\frac{a}{b}$ -- предел $\{z_n\}$
+    
+    \subsection*{Свойства  пределов,  связанные  с неравенствами}
+        \textbf{Теорема:} Если для последовательности $\{x_n\}$
+        $\exists n_0 \in \mathbb{N}, b \in \mathbb{R}: \forall n \ge n_0 \longmapsto x_n \ge b \wedge \exists \lim_{n\to\infty} x_n = a$, то $a \ge b$.
+        \\
+        \textbf{Доказательство:}
+        Пуcть $a < b$:
+        \[ \epsilon_0 = b - a \]
+        \[ \exists n_1 = n_1(\epsilon_0) \ge n_0: \forall n \ge n_1 \longmapsto |x_n - a| < b - a \]
+        \[ x_n - a < b - a \]
+        \[ x_n < b \]
+        что противоречит тому, что $x_n \ge b $
+        \\
+        \\
+        \textbf{Теорема:} Если для последовательностей $\{x_n\}$ и $\{y_n\}$
+        $\exists n_0: \forall n \ge n_0 \longmapsto x_n \ge y_n \wedge \exists \lim_{n\to\infty} x_n = a \wedge \exists \lim_{n\to\infty} y_n = b$, то $a \ge b$.
+        \\
+        \textbf{Доказательство:}
+        Пуcть $a < b$:
+        \[ \epsilon_0 = \frac{b - a}{2} \]
+        \[ \exists n_1 = n_1(\epsilon_0) \ge n_0: \forall n \ge n_1 \longmapsto |x_n - a| < \frac{b - a}{2} \]
+        \[ \exists n_2 = n_2(\epsilon_0) \ge n_0: \forall n \ge n_2 \longmapsto |y_n - b| < \frac{b - a}{2} \]
+        \[ x_n < a + \frac{b - a}{2} = \frac{b + a}{2} \]
+        \[ b - \frac{b - a}{2} = \frac{b + a}{2} < y_n \]
+        \[ x_n < y_n \]
+        что противоречит тому, что $x_n \ge y_n $
+        \\
+        \\
+        \textbf{Теорема:} Если для последовательностей $\{x_n\}$, $\{y_n\}$ и $\{z_n\}$
+        то $\exists \lim_{n\to\infty} z_n = a$.
+        $\exists n_0: \forall n \ge n_0 \longmapsto  \wedge \exists \lim_{n\to\infty} x_n = \lim_{n\to\infty} y_n = a$,
+        \\
+        \textbf{Доказательство:}
+        \[ x_n - a \ge y_n - a \ge z_n - a \]
+        \[ |y_n - a| \le \max(|x_n - a|, |z_n - a|) \]
+        \[ \forall \epsilon > 0 \exists N_1 = N_1(\epsilon_0): \forall n \ge N_1 \longmapsto |x_n - a| < \epsilon \]
+        \[ \forall \epsilon > 0 \exists N_2 = N_2(\epsilon_0): \forall n \ge N_2 \longmapsto |z_n - a| < \epsilon \]
+        \[ \forall \epsilon > 0 \exists N = \max(N_1(\epsilon_0), N_2(\epsilon_0)): \forall n \ge N_2 \longmapsto |y_n - a| < \epsilon \]
+    
+    \subsection*{Теорема  Вейерштрасса  о  пределе  монотонной  ограниченной  последовательности}
+        \textbf{Теорема:} Если последовательность $\{x_n\}$ ограничена и монотонна, то она сходится к своей точной верхней грани (если она неубывает или возрастает),
+        или к своей точной нижней грани (если она невозрастает или убывает).
+        \\
+        \textbf{Доказательство:}
+        пусть $\{x_n\}$ возрастает. 
+        \[ a = \sup \{x_n\} \implies \forall \epsilon \exists N = N(\epsilon): x_{N} > a - \epsilon \]
+        \[ 0 \le a - x_{N} < \epsilon \]
+        так как $\{x_n\}$ возрастает
+        \[ \forall n > N \longmapsto x_n > x_N \implies 0 \le a - x_{n} < a - x_{N} < \epsilon \]
+        следовательно $\{x_n\}$ сходится к $a = \sup \{x_n\}$.
+        
+        
+    \subsection*{Теорема Кантора о вложенных отрезках}
+        Системой стягивающихся отрезков называют последовательность $\{[a_n;b_n]\}$, если:
+        \begin{itemize}
+            \item $\forall n \longmapsto [a_{n+1};b_{n+1}] \subseteq [a_{n};b_{n}]$
+            \item $\lim_{n\to\infty} (b_n - a_n) = 0$
+        \end{itemize}
+        \textbf{Теорема:} система стягивающихся отрезков имеет единственную точку, принадлежащую им всем.
+        \\
+        \textbf{Доказательство:}
+        $\{a_n\}$, $\{b_n\}$ ограничены и монотонны, следовательно $\exists c = \sup \{a_n\} = \inf \{b_n\}$.
+        \\
+        Пусть $\exists c' > c: c' \in [a_n; b_n] \forall n$. Тогда $\forall n b_n - a_n \ge c' - c > 0 \implies lim_{n\to\infty} (b_n - a_n) > 0$,
+        что противоречит тому, что $\lim_{n\to\infty} (b_n - a_n) = 0$.
+        
+        
+    \subsection*{Число $e$}
+        \textbf{Теорема:} число $e = \lim_{n\to\infty} \left(1 + \frac{1}{n} \right)^n$
+        \\
+        \textbf{Доказательство:}
+        \[ x_n = 1 + n\frac{1}{n} + \frac{n(n-1)}{2!}\frac{1}{n^2} + ... +
+        \frac{n(n-1)...(n - (n - 1)}{n!}\frac{1}{n^n} \]
+        
+        \[ x_n = 1 + 1 + \frac{1}{2!} \left(1 - \frac{1}{n}\right) + ... +
+        \frac{1}{n!} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) ... \left(1 - \frac{n - 1}{n}\right) \]
+        
+        \[ x_{n + 1} = 1 + 1 + \frac{1}{2!} \left(1 - \frac{1}{n + 1}\right) + ... +
+        \frac{1}{(n + 1)!} \left(1 - \frac{1}{n + 1}\right) \left(1 - \frac{2}{n + 1}\right) ... \left(1 - \frac{n}{n + 1}\right) \]
+        
+        \[ x_{n + 1} > x_{n} \]
+        
+        \[ \frac{1}{n!} < \frac{1}{2^{n-1}} \]
+        
+        \[ x_n \le 2 + \frac{1}{2!} + ... + \frac{1}{n!} \le 2 + \frac{1}{2} + ... + \frac{1}{2^{n-1}} =
+        2 + 1 - \frac{1}{2^{n-1}} < 3 \]
+        
+        Последовательность монотонно возрастает и ограничена, следовательно $\exists \lim_{n\to\infty} \{x_n\} = e$.
+        
     \newpage
 
 \end{document}
