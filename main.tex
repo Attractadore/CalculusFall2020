@@ -397,6 +397,67 @@
         
         Последовательность монотонно возрастает и ограничена, следовательно $\exists \lim_{n\to\infty} \{x_n\} = e$.
         
+        
+    \newpage
+        
+    \section{}
+    \subsection*{Подпоследовательности, частичные пределы}
+        \subsubsection*{Подпоследовательности}
+            Пусть $\{x_n\}$ -- произвольная последовательность, $\{k_n\}$ -- возрастающая последовательность из натуральных чисел.
+            Тогда $\{x_{k_n}\}$ называется подпоследовательностью $\{x_n\}$.
+            
+        \subsubsection*{Частичные пределы}
+            Если $\{x_{k_n}\}$ сходится к $a$, то $a$ -- частичный предел $\{x_n\}$.
+        
+        
+    \subsection*{Теорема Больцано-Вейерштрасса}
+        \textbf{Теорема:} если последовательность $\{x_n\}$ ограничена, то у нее есть сходящаяся последовательность $\{x_{k_n}\}$.
+        \\
+        \textbf{Доказательство:}
+        Так как $\{x_n\}$ ограничена, $\exists \alpha, \beta: \alpha \le x_n \le \beta \forall n$.
+        На отрезке $[\alpha; \beta]$ лежит бесконечное колличество членов последовательности.
+        Выберем такой отрезок $[\alpha_1; \beta_1]$, на котором лежит бесконечное колличество членов последовательности
+        и для которого $\beta_1 - \alpha_1 = \frac{\beta - \alpha}{2}$.
+        На шаге $n$ имеем $\beta_n - \alpha_n = \frac{\beta_{n-1} - \alpha_{n-1}}{2}$.
+        \[ \lim_{n\to\infty} (b_n - a_n) = \lim_{n\to\infty} (b - a)\frac{1}{2^n} = 0 \]
+        \[ \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n = \gamma \]
+        Выберем $x_{k_1}$ такое, что $x_{k_1} \in [a_1;b_1]$.
+        Выберем $x_{k_2}$ такое, что $x_{k_2} \in [a_2;b_2]$ и $k_2 > k_1$. Такое $k_2$ существует, потому что если не учитывать все элементы
+        последовательности, чей номер меньше или равен $k_1$, на $[a_2;b_2]$ все равно лежит бесконечное колличество членов $\{x_n\}$.
+        На шаге $n$ выбираем $x_{k_n}$ такое, что $x_{k_n} \in [a_n;b_n]$ и $k_n > k_{n-1}$.
+        \[ a_n \le x_{k_n} \le b_n \]
+        \[ \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n = \gamma \implies \lim_{n\to\infty} x_{k_n} = \gamma \]
+        
+    
+    \subsection*{Критерий Коши существования конечного предела последовательности}
+        \subsubsection*{Фундаментальная последовательность}
+        Если для последовательности $\{x_n\}$ выполняется следующее условие:
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n,m \ge N \longmapsto |x_n - x_m| < \epsilon \]
+        то она называется фундаментальной.
+        
+        \subsubsection*{Критерий Коши}
+        \textbf{Теорема:} чтобы у последовательности $\{x_n\}$ существовал конечный предел, необходимо и достаточно,
+        чтобы она была фундаментальной.
+        \\
+        \textbf{Доказательство:}
+        \\
+        Необходимость: пусть $\lim_{n\to\infty} x_n = a$. Тогда:
+        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n, m \ge N \longmapsto |x_n - a| < \frac{\epsilon}{2} \wedge |x_m - a| < \frac{\epsilon}{2} \]
+        \[ \frac{-\epsilon}{2} < x_n - a < \frac{\epsilon}{2} \]
+        \[ \frac{-\epsilon}{2} < a - x_m < \frac{\epsilon}{2} \]
+        \[ -\epsilon < x_n - x_m < \epsilon \]
+        \[ |x_n - x_m| < \epsilon \]
+        следовательно, $\{x_n\}$ -- фундаментальная.
+        \\
+        Достаточность: если $\{x_n\}$ фундаментальная, то она ограничена, следовательно у нее есть подпоследовательность $\{x_{k_n}\}$, сходящаяся к $a$:
+        \[ \forall \epsilon > 0 \exists N_1 = N_1(\epsilon): \forall n \ge N_1 \longmapsto |x_{k_n} - a| < \frac{\epsilon}{2} \]
+        Так как $\{x_n\}$ фундаментальная:
+        \[ \forall \epsilon > 0 \exists N_2 = N_2(\epsilon): \forall n,m \ge N_2 \longmapsto |x_n - x_m| < \frac{\epsilon}{2} \]
+        \[ \forall \epsilon > 0 \exists N = \max(N_1(\epsilon), N_2(\epsilon)): \forall n \ge N \longmapsto |x_n - a| = |x_n - x_{k_N} + x_{k_N} - a|
+        \le |x_n - x_{k_N}| + |x_{k_N} - a| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \]
+        следовательно, $\{x_n\}$ сходится к $a$.
+        
+        
     \newpage
 
 \end{document}
