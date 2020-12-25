@@ -4,8 +4,15 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{geometry}
-\usepackage{setspace}
 \geometry{a4paper, portrait, margin=1in}
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+}
 
 \title{Экзаменационная программа по курсу «Введение в математический анализ», осенний семестр 2020–2021 учебного года}
 \date{}
@@ -16,8 +23,13 @@
 
     \newpage
     \pagenumbering{arabic}
-    
+
     \onehalfspacing
+
+    \setcounter{tocdepth}{3}
+    \tableofcontents
+
+    \newpage
 
     \section{}
     \subsection*{Действительные  числа}
