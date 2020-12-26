@@ -728,9 +728,9 @@
     
     \section{}
     \subsection{Второй замечательный предел}
-        \[ e = \lim_{n \to \infty} {\left( 1 + \frac{1}{n} \right)}^n \]
-        
-        
+        \[ e = \lim_{x \to \infty} {\left( 1 + \frac{1}{x} \right)}^x \]
+
+
     \subsection{Определение и свойства экспоненты, показательной функции, логарифмической и степенной функций}
         \subsection*{Степенная функция с рациональным показателем}
         Функцию $f(x) = x^{\frac{p}{q}} = \left( \sqrt[q]{x} \right)^p $ где $x > 0 \in \mathbb{R}, p \in \mathbb{Z}, q \in \mathbb{N}$ назовем степенной с рациональным показателем.
@@ -772,14 +772,156 @@
         \subsection*{Степенная функция с действительным показателем}
         Степенную функцию с действительным показателем определим как $f(x) = x^{\beta} = {\left( a^{\log_a x} \right)}^\beta = a^{\beta \log_a x}$, 
         где $x > 0, a \in \mathbb{R}, a > 0, a \neq 1, \beta \in \mathbb{R}.$
-        
+
+
     \subsection{Непрерывность элементарных функций}
         Элементарные функции непрервны всюду, где определены.
         
-    
+
     \newpage
     
     \section{}
+    \subsection*{Производная функции одной переменной}
+        Производной функции $f(x)$ в точке $x_0$ называется следующий предел:
+        \[ f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \]
+        
+        
+    \subsection*{Односторонние производные}
+        Производные справа и слева определяются соответственно как:
+        \[ f'(x_0 \pm 0) = \lim_{x \to x_0 \pm 0} \frac{f(x) - f(x_0)}{x - x_0} \]
+        
+        
+    \subsection*{Непрерывность функции, имеющей производную}
+        \theorem если функция $f(x)$ дифференцируема в точке $x_0$, то она непрервна в точке $x_0$
+        \\
+        \proof пусть $f(x)$ дифференцируема в точке $x_0$:
+        \[ \Delta f(x_0, \Delta x) = A \Delta x + \alpha(\Delta x) \Delta x = f(x) - f(x_0) \]
+        \[ \lim_{\Delta x \to 0} \Delta f(x_0, \Delta x) = \lim_{\Delta x \to 0} \left( f(x_0 + \Delta x) - f(x_0) \right) = 0 \]
+        \[ \lim_{\Delta x \to 0} \left( f(x_0 + \Delta x) - f(x_0) \right) = \lim_{\Delta x \to 0} f(x_0 + \Delta x) - \lim_{\Delta x \to 0} f(x_0) =
+           \lim_{\Delta x \to 0} f(x_0 + \Delta x) - f(x_0) = 0 \]
+        \[ \lim_{\Delta x \to 0} f(x_0 + \Delta x) = f(x_0) \]
+
+
+    \subsection*{Дифференцируемость функции в точке, дифференциал}
+        Функция $f(x)$ дифференцируема в точке $x_0$, если ее приращение $\Delta f(x_0, \Delta x) = f(x + \Delta x) - f(x)$, соответствующее приращению
+        аргумента $\Delta x$, можно представить в виде $ \Delta f(x_0, \Delta x) = A \Delta x + \alpha(\Delta x) \Delta x $, где $\alpha(\Delta x)$ -- бесконечно малая при
+        $ x \to 0 $.
+        \\
+        \\
+        \theorem понятие дифференцируемости функции $f(x)$ в точке $x_0$ эквивалентно тому, что у функции $f(x)$ существует производная в точке $x_0$.
+        \\
+        \proof
+        Пусть функция $f(x)$ дифференцируема в точке $x_0$:
+        \[ \frac{\Delta f(x_0, \Delta x)}{\Delta x} = A + \alpha(\Delta x) \]
+        \[ f'(x_0) = \lim_{\Delta x \to 0} \frac{\Delta f(x_0, \Delta x)}{\Delta x} = A \]
+        Пусть у функции $f(x)$ есть производная в точке $x_0$:
+        \[ f'(x_0) = \lim_{\Delta x \to 0} \frac{\Delta f(x_0, \Delta x)}{\Delta x} \]
+        \[ \frac{\Delta f(x_0, \Delta x)}{\Delta x} - f'(x_0) = \alpha(\Delta x) \]
+        \[ \lim_{\Delta x \to 0} \alpha(\Delta x) = 0 \]
+        \[ \Delta f(x_0, \Delta x) = f'(x_0) \Delta x + \alpha(\Delta x) \Delta x \]
+
+
+    \subsection*{Геометрический смысл производной и дифференциала}
+        Значение производной в точке -- тангенс угла наклона касательной к графику функции в точке.
+        
+    \subsection*{Производная суммы, произведения и частного двух функций}
+        \theorem пусть у функций $f(x)$ и $g(x)$ существуют производные в точке $x_0$. Тогда для функций $f(x) \pm g(x)$, $f(x)g(x)$ и $\frac{f(x)}{g(x)}$ (если $g(x_0) \neq 0$)
+        существуют производные.
+        \begin{itemize}
+            \item $ \left( f(x) \pm g(x) \right)' = f'(x) \pm g'(x) $
+            \item $ (f(x)g(x))' = f'(x)g(x) + g'(x)f(x) $
+            \item $ \left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x)g(x) - g'(x)f(x)}{g^2(x)} $
+        \end{itemize}
+        \proof
+        \\
+        Для суммы и разности:
+        \[ (f(x) \pm g(x))' = \lim_{\Delta x \to 0} \frac{\left( f(x + \Delta x) \pm g(x + \Delta x) \right) - \left( f(x) \pm g(x) \right)}{\Delta x} \]
+        \[ (f(x) \pm g(x))' = \lim_{\Delta x \to 0} \frac{\left( f(x + \Delta x) - f(x) \right) \pm \left( g(x + \Delta x) -  g(x) \right)}{\Delta x} \]
+        \[ (f(x) \pm g(x))' = f'(x) \pm g'(x) \]
+        Для произведения функций:
+        \[ (f(x)g(x))' = \lim_{\Delta x \to 0} \frac{f(x + \Delta x)g(x + \Delta x) - f(x)g(x)}{\Delta x} \]
+        \[ (f(x)g(x))' = \lim_{\Delta x \to 0} \frac{f(x + \Delta x)g(x + \Delta x) - f(x + \Delta x)g(x) + f(x + \Delta x)g(x) - f(x)g(x)}{\Delta x} \]
+        \[ (f(x)g(x))' = \lim_{\Delta x \to 0} \frac{f(x + \Delta x)(g(x + \Delta x) - g(x)) + (f(x + \Delta x) - f(x))g(x)}{\Delta x} \]
+        \[ (f(x)g(x))' = f(x)g'(x) + f'(x)g(x) \]
+        Для отношения функций:
+        \[ \left( \frac{f(x)}{g(x)} \right)' = \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x)}{ g(x + \Delta x) \Delta x } - \frac{f(x)}{ g(x) \Delta x } \right) \]
+        \[ \left( \frac{f(x)}{g(x)} \right)' = \lim_{\Delta x \to 0} \left( \frac{f(x + \Delta x) g(x) - f(x) g(x + \Delta x)}{ g(x) g(x + \Delta x) \Delta x } \right) \]
+        \[ \left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x) g(x) - f(x) g'(x)}{g^2(x)} \]
+        
+    \subsection*{Производная сложной функции}
+        \theorem Пусть функция $f(x)$ дифференцируема в точке $x_0$, функция $g(y)$ дифференцируема в точке $y_0 = f(x_0)$. Тогда производная функции
+        $h(x) = g(f(x))$ в точке $x_0$ равна $h'(x_0) = g'(f(x_0)f'(x_0)$
+        \\
+        \proof
+        \[ \Delta g(y_0, \Delta y) = g'(y_0) \Delta y + \alpha (\Delta y) \Delta y \]
+        \[ \lim_{\Delta y \to 0} \alpha (\Delta y) = 0 \]
+        \[ \Delta x \to 0 \implies \Delta y \to 0 \]
+        \[ \frac{\Delta g(y_0, \Delta y)}{\Delta x} = g'(y_0) \frac{\Delta y}{\Delta x} + \alpha (\Delta y) \frac{\Delta y}{\Delta x} \]
+        \[ \lim_{\Delta x \to 0} \frac{\Delta g(y_0, \Delta y)}{\Delta x} = (g(f(x))'(x_0) = g'(y_0)f'(x_0) + 0 = g'(f(x_0))f'(x_0) \]
+        
+    \subsection*{Производная обратной функции}
+        \theorem Пусть функция $f(x)$ непрерывна и строго монотонна на множестве $X = {x: |x - x_0| \le \delta}$ и в точке $x_0$ имеет производную $f'(x_0) \neq 0$.
+        Тогда обратная функция $f^{-1}(y)$ в точке $y_0 = f(x_0)$ имеет производную $f'(y_0) = \frac{1}{f(x_0)}$.
+        \\
+        \proof
+        Обратная функция $f^{-1}(y)$ существует по теореме об обратной функции.
+        \\
+        \[ \Delta y = f(x_0 + \Delta x) - f(x_0) \]
+        \[ \Delta x = f^{-1}(y_0 + \Delta y) - f^{-1}(y_0) \]
+        \[ \frac{\Delta x}{\Delta y} = \frac{1}{\frac{\Delta y}{\Delta x}} \]
+        \[ \Delta x \to 0 \implies \Delta y \to 0 \]
+        \[ \lim_{\Delta y \to 0} \frac{\Delta x}{\Delta y} = \lim_{\Delta x \to 0} \frac{1}{\frac{\Delta y}{\Delta x}} \]
+        \[ f^{-1}(y_0) = \frac{1}{f'(x_0)} \]
+         
+        
+    \subsection*{Производные элементарных функций}
+        \[ (e^x)' = \lim_{\Delta x \to 0} \frac{e^{x + \Delta x} - e^x}{\Delta x} = \lim_{\Delta x \to 0} e^x \frac{e^{\Delta x} - 1}{\Delta x} =
+            \lim_{\Delta x \to 0} e^x \frac{1 + \Delta x - 1}{\Delta x} = e^x \]
+        \[ (\ln x)' = \lim_{\Delta x \to 0} \frac{ \ln (x + \Delta x) - \ln x} {\Delta x} = \lim_{\Delta x \to 0} \frac {\ln (\frac{x + \Delta x}{x})} {\Delta x} =
+           \lim_{\Delta x \to 0} \frac {\Delta x} {x \Delta x} = \frac{1}{x} \]
+        \[ (x^{\beta})' = (e^{\beta \ln x})' = \frac{\beta}{x} e^{\beta \ln x} = \beta x^{\beta - 1} \]
+        \[ (\sin x)' = \lim_{\Delta x \to 0} \frac{\sin (x + \Delta x) - \sin x} {\Delta x} =
+        \lim_{\Delta x \to 0} \frac{2 \sin \left( \frac {\Delta x} {2} \right) \cos \left(x + \frac{\Delta x}{2} \right)} {\Delta x} = \cos x \]
+        \[ (\cos x)' = (\sin (x + \frac{\pi}{2}))' = \cos (x + \frac{\pi}{2}) = - \sin x \]
+        \[ (\tan x)' = (\frac{\sin x}{\cos x})' = \frac{\cos x \cos x + \sin x \sin x}{\cos^2 x} = \frac{1}{\cos^2 x} = 1 + \tan^2 x \]
+        \[ (\arcsin x)' = (\arcsin \left( \sin \varphi \right))' = \frac{1}{\cos \varphi} = \frac{1}{\sqrt{1 - \sin^2 \varphi}} = \frac{1}{\sqrt{1 - x^2}} \]
+        \[ (\arccos x)' = (\arcsin \left( \cos \varphi \right))' = \frac{-1}{\sin \varphi} = \frac{-1}{\sqrt{1 - \cos^2 \varphi}} = \frac{-1}{\sqrt{1 - x^2}} \]
+        \[ (\arctan x)' = (\arctan \left( \tan \varphi \right))' = \frac{1}{1 + \tan^2 \varphi} = \frac{1}{1 + x^2} \]
+        
+    \subsection*{Инвариантность формы дифференциала относительно замены переменной}
+        \subsubsection*{Определение дифференциала}
+        Дифференциалом функции $f(x)$ $df$ в точке $x_0$ назовем линейную относительно $\Delta x$ часть приращения $\Delta f(x_0, \Delta x)$ функции $f(x)$,
+        соответствующую приращению аргумента $\Delta x$.
+        \[ df (x_0) = f'(x_0) \Delta x \]
+        Дифференциалом независимой переменной $x$ $dx$ назовем любое число.
+        \[ dx = \Delta x \]
+        \[ df (x_0) = f'(x_0) dx \]
+        \[ f'(x_0) = \frac{dy(x_0)}{dx} \]
+        
+        \subsubsection*{Инвариантность формы дифференциала относительно замены переменной}
+        Пусть функция $z = g(y)$ дифференцируемая в точке $y_0$:
+        \[ dz = g'(y_0) dy \]
+        Пусть функция $g(y)$ дифференцируемая в точке $y_0 = f(x_0)$, $f(x)$ дифференцируема в точке $x_0$:
+        \[ z = h(x) = g(f(x)) \]
+        \[ h'(x_0) = g'(y_0) f'(x_0) \]
+        \[ h'(x_0) = \frac{dz}{dx} = g'(y_0) \frac{dy}{dx} \]
+        \[ dz = g'(y_0) dy \]
+        Вне зависимости от того, является ли $y$ независимой переменной или $y = f(x)$, дифференциал $z = g(y)$ всегда имеет один вид $dz = g'(y_0)dy$.
+
+
+    \subsection*{Функции, заданные параметрически, их дифференцирование}
+        \subsubsection*{Функции, заданные параметрически}
+        Пусть функции $x = u(t)$ и $y = v(t)$ определены на множестве $T = [\alpha; \beta]$. Тогда функция $y = f(x)$ задана параметрически, а $t$ -- параметр.
+
+        \subsubsection*{Дифференцирование функций, заданных параметрически}
+        \theorem пусть функции $x = u(t)$ и $y = v(t)$ непрерывны и сторого монотонны на множестве $T = [\alpha; \beta]$ и дифференцированы в точке $t_0$, $u'(t_0) \neq 0$.
+        Тогда $f'(x_0) = f'(x(t_0)) = \frac{u'(t_0)}{v'(t_0)}$
+        \\
+        \proof по теореме об обратной функции, существует обратная функция $t = u^{-1}(x)$.
+        \[ y = v(t) \]
+        \[ t'(x_0) = \frac{1}{u'(t_0)} \]
+        \[ y(x_0) = v(t(x_0)) \]
+        \[ y'(x_0) = v'(t_0) t'(x_0) = \frac{v'(t_0)}{u'(t_0)} \]
         
 
 \end{document}
