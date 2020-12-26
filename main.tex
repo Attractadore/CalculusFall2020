@@ -724,6 +724,62 @@
         Для концов отрезка надо аналогичным образом доказать, что $f^{-1}(\alpha + 0) = f^{-1}(\alpha)$ и $f^{-1}(\beta - 0) = f^{-1}(\beta)$.
         
         
+    \newpage
+    
+    \section{}
+    \subsection{Второй замечательный предел}
+        \[ e = \lim_{n \to \infty} {\left( 1 + \frac{1}{n} \right)}^n \]
+        
+        
+    \subsection{Определение и свойства экспоненты, показательной функции, логарифмической и степенной функций}
+        \subsection*{Степенная функция с рациональным показателем}
+        Функцию $f(x) = x^{\frac{p}{q}} = \left( \sqrt[q]{x} \right)^p $ где $x > 0 \in \mathbb{R}, p \in \mathbb{Z}, q \in \mathbb{N}$ назовем степенной с рациональным показателем.
+        Если $p = 0$, то $f(x) = 1$, если $p < 0$, то $f(x) = \frac{1}{x^{\frac{-p}{q}}}$.
+        \\
+        Свойства степенной функции с рациональным показателем $f(x) = x^{\frac{p}{q}} = x^r$:
+        \begin{itemize}
+            \item $ \left( \sqrt[q]{x} \right)^p = \sqrt[q]{x^p} $
+            \item $ r_1, r_2 \in \mathbb{Q} \implies {\left( x^{r_1} \right)}^{r_2} = x^{r_1r_2} $
+            \item $ r_1, r_2 \in \mathbb{Q} \implies x^{r_1}x^{r_2} = x^{r_1 + r_2} $
+            \item $ x > 1, r > 0 \implies x^r > 1 $
+            \item $ x > 1, r_1 < r_2 \in \mathbb{Q} \implies x^{r_1} < x^{r_2}$
+        \end{itemize}
+        
+        \subsection*{Показательная функция}
+        Пусть $a > 0, x \in \mathbb{R}$. Последовательность \seq{r_n} сходится к $x$. Определим показательную функцию как 
+        \[ f(x) = a^x = \lim_{n \to \infty} r_n \]
+        \\
+        Свойства показательной функции $f(x) = a^x$:
+        \begin{itemize}
+            \item $ x_1, x_2 \in \mathbb{R} \implies {\left( a^{x_1} \right)}^{x_2} = a^{x_1x_2} $
+            \item $ x_1, x_2 \in \mathbb{R} \implies a^{x_1}a^{x_2} = a^{x_1 + x_2} $
+            \item $ a > 1 \implies \lim_{x \to +\infty} a^x = +\infty \land \lim_{x \to -\infty} a^x = 0 $
+            \item $ 0 < a < 1 \implies \lim_{x \to +\infty} a^x = 0 \land \lim_{x \to -\infty} a^x = +\infty $
+        \end{itemize}
+        Если $a = e$, то $f(x)$ называется экспоненциальной функцией, или экспонентой.
+        
+        \subsection*{Логарифмическая функция}
+        По теореме об обратной функции, на интервале \intr{0}{+\infty} определена обратная $ f(x) = a^x$ где $a \in \mathbb{R}, a > 0, a \neq 1 $
+        функция $g(x) = \log_a x$.
+        \\
+        Свойства логарифмической функции:
+        \begin{itemize}
+            \item $ a > 1 \implies \lim_{x \to +\infty} \log_a x = +\infty \land \lim_{x \to +0} \log_a x = -\infty $
+            \item $ 0 < a < 1 \implies \lim_{x \to +\infty} \log_a x = -\infty \land \lim_{x \to +0} \log_a x = +\infty $
+        \end{itemize}
+        Если $a = e$, то $f(x)$ называется натуральным логарифмом.
+        
+        \subsection*{Степенная функция с действительным показателем}
+        Степенную функцию с действительным показателем определим как $f(x) = x^{\beta} = {\left( a^{\log_a x} \right)}^\beta = a^{\beta \log_a x}$, 
+        где $x > 0, a \in \mathbb{R}, a > 0, a \neq 1, \beta \in \mathbb{R}.$
+        
+    \subsection{Непрерывность элементарных функций}
+        Элементарные функции непрервны всюду, где определены.
+        
+    
+    \newpage
+    
+    \section{}
         
 
 \end{document}
