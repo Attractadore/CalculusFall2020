@@ -207,15 +207,15 @@
         Последовательность $\{x_n\}$ называется бесконечно большой, если:
         \[ \forall M > 0 \exists N = N(M): \forall n \ge N \longmapsto |x_n| > M \]
         Последовательность $\{x_n\}$ называется бесконечно малой, если:
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_n| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n \ge N \longmapsto |x_n| < \varepsilon \]
         \textbf{Теорема:} сумма двух бесконечно маллых последовательностей также является бесконечно малой.
         \\
         \textbf{Доказательство:}
         пусть последовательности $\{x_n\}$ и $\{y_n\}$ -- бесконечно малые:
-        \[ \forall \epsilon > 0 \exists N_x = N_x(\epsilon): \forall n \ge N_x \longmapsto |x_n| < \frac{\epsilon}{2} \]
-        \[ \forall \epsilon > 0 \exists N_y = N_y(\epsilon): \forall n \ge N_y \longmapsto |y_n| < \frac{\epsilon}{2} \]
-        \[ \forall \epsilon > 0 \exists N = \max (N_x(\epsilon), N_y(\epsilon)): \forall n \ge N \longmapsto |x_n| < \frac{\epsilon}{2} \wedge |y_n| < \frac{\epsilon}{2} \]
-        \[ |x_n + y_n| \le |x_n| + |y_n| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N_x = N_x(\varepsilon): \forall n \ge N_x \longmapsto |x_n| < \frac{\varepsilon}{2} \]
+        \[ \forall \varepsilon > 0 \exists N_y = N_y(\varepsilon): \forall n \ge N_y \longmapsto |y_n| < \frac{\varepsilon}{2} \]
+        \[ \forall \varepsilon > 0 \exists N = \max (N_x(\varepsilon), N_y(\varepsilon)): \forall n \ge N \longmapsto |x_n| < \frac{\varepsilon}{2} \wedge |y_n| < \frac{\varepsilon}{2} \]
+        \[ |x_n + y_n| \le |x_n| + |y_n| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon \]
         следовательно, $\{x_n\} + \{y_n\}$ -- также бесконечно малая последовательность.
         \\
         \\
@@ -223,11 +223,11 @@
         \\
         \textbf{Доказательство:}
         пусть последовательность $\{x_n\}$ -- бесконечно малая:
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_n| < \epsilon \]
-        Возьмем произвольное $\epsilon_0$. Тогда $\forall n \ge N(\epsilon_0) \longmapsto |x_n| < \epsilon_0$.
-        Выберем среди первых $N(\epsilon_0)$ членов последовательности максимальный по модулю и обозначим его модуль за $\epsilon_1$.
-        Тогда $\forall x: 1 \le x \le N(\epsilon_0) \longmapsto |x_n| \le \epsilon_1$.
-        Следовательно, $\forall n \in \mathbb{N} \longmapsto |x_n| \le \epsilon = \max(\epsilon_0, \epsilon_1) \implies \{x_n\}$ ограничена.
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n \ge N \longmapsto |x_n| < \varepsilon \]
+        Возьмем произвольное $\varepsilon_0$. Тогда $\forall n \ge N(\varepsilon_0) \longmapsto |x_n| < \varepsilon_0$.
+        Выберем среди первых $N(\varepsilon_0)$ членов последовательности максимальный по модулю и обозначим его модуль за $\varepsilon_1$.
+        Тогда $\forall x: 1 \le x \le N(\varepsilon_0) \longmapsto |x_n| \le \varepsilon_1$.
+        Следовательно, $\forall n \in \mathbb{N} \longmapsto |x_n| \le \varepsilon = \max(\varepsilon_0, \varepsilon_1) \implies \{x_n\}$ ограничена.
         \\
         \\
         \textbf{Теорема:} произведение бесконечно малой и ограниченной последовательностей -- бесконечно малая последовательность.
@@ -235,8 +235,8 @@
         \textbf{Доказательство:}
         пусть $\{x_n\}$ -- ограниченная последовательность, $\{y_n\}$ -- бесконечно малая:
         \[ \exists C > 0: \forall n \longmapsto |x_n| \le C \]
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |y_n| < \frac{\epsilon}{C} \]
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_ny_n| \le C|y_n| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n \ge N \longmapsto |y_n| < \frac{\varepsilon}{C} \]
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n \ge N \longmapsto |x_ny_n| \le C|y_n| < \varepsilon \]
         \\
         \\
         \textbf{Теорема:} произведение двух бесконечно малых последовательностей -- бесконечно малая последовательность.
@@ -249,7 +249,7 @@
         \textbf{Теорема:} если все члены бесконечно малой последовательности с какого-то номера равны $\gamma$, то $\gamma = 0$.
         \\
         \textbf{Доказательство:}
-        пусть $\gamma \neq 0$. Последовательность $\{x_n\}$ бесконечно мала, возьмем $\epsilon_0 = |\gamma|$ и проверим для него условие:
+        пусть $\gamma \neq 0$. Последовательность $\{x_n\}$ бесконечно мала, возьмем $\varepsilon_0 = |\gamma|$ и проверим для него условие:
         \[ \exists N = N(\gamma): \forall n \ge N \longmapsto |\gamma| < |\gamma| \]
         получается противоречие.
         \\
@@ -275,8 +275,8 @@
         \\
         \textbf{Доказательство:}
         так как $\{y_n\}$ -- бесконечно малая:
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |y_n| < \frac{1}{\epsilon} \implies \frac{1}{|y_n|} > {\epsilon}\]
-        Следовательно $\{y_n\}$ -- бесконечно большая. $ |x_ny_n| > C|y_n| > \epsilon $, следовательно $\{z_n\}$ -- бесконечно большая.
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n \ge N \longmapsto |y_n| < \frac{1}{\varepsilon} \implies \frac{1}{|y_n|} > {\varepsilon}\]
+        Следовательно $\{y_n\}$ -- бесконечно большая. $ |x_ny_n| > C|y_n| > \varepsilon $, следовательно $\{z_n\}$ -- бесконечно большая.
     
     
     \subsection*{Предел числовой последовательности}
@@ -284,17 +284,17 @@
         \\
         Число $a = \lim_{x\to\infty} x_n$ называется пределом последовательности $\{x_n\}$, если:
         \\
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n \ge N \longmapsto |x_n - a| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n \ge N \longmapsto |x_n - a| < \varepsilon \]
     
     
     \subsection*{Единственность предела}
         \textbf{Доказательство:}
         пусть $a_1$ -- предел последовательности $\{x_n\}$ и $a_2$ -- предел $\{x_n\}$. Тогда:
-        \[ \forall \epsilon > 0 \exists N_1 = N_1(\epsilon): \forall n \ge N_1 \longmapsto |x_n - a_1| < \epsilon \]
-        \[ \forall \epsilon > 0 \exists N_2 = N_2(\epsilon): \forall n \ge N_2 \longmapsto |x_n - a_2| < \epsilon \]
-        \[ \forall \epsilon > 0 \exists N = \max (N_1(\epsilon), N_2(\epsilon)): \forall n \ge N \longmapsto
-        x_n \in (a_1 - \epsilon; a_1 + \epsilon) \cap (a_2 - \epsilon; a_2 + \epsilon) \]
-        При $\epsilon \le \frac{a_1 + a_2}{2}$ $(a_1 - \epsilon; a_1 + \epsilon) \cap (a_2 - \epsilon; a_2 + \epsilon) = \varnothing$ -- противоречие.
+        \[ \forall \varepsilon > 0 \exists N_1 = N_1(\varepsilon): \forall n \ge N_1 \longmapsto |x_n - a_1| < \varepsilon \]
+        \[ \forall \varepsilon > 0 \exists N_2 = N_2(\varepsilon): \forall n \ge N_2 \longmapsto |x_n - a_2| < \varepsilon \]
+        \[ \forall \varepsilon > 0 \exists N = \max (N_1(\varepsilon), N_2(\varepsilon)): \forall n \ge N \longmapsto
+        x_n \in (a_1 - \varepsilon; a_1 + \varepsilon) \cap (a_2 - \varepsilon; a_2 + \varepsilon) \]
+        При $\varepsilon \le \frac{a_1 + a_2}{2}$ $(a_1 - \varepsilon; a_1 + \varepsilon) \cap (a_2 - \varepsilon; a_2 + \varepsilon) = \varnothing$ -- противоречие.
     
     \subsection*{Арифметические операции со сходящимися последовательностями}
         \textbf{Теорема:} если последовательность $\{x_n\}$ сходится к $a$, а $\{y_n\}$ -- к $b$, то их сумма $\{z_n\} = \{x_n\} + \{y_n\}$ сходится к $a + b$.
@@ -319,11 +319,11 @@
         \textbf{Доказательство:}
         $x_n = a_n + a$, $y_n = b_n + b$, где $\{a_n\}$ и $\{b_n\}$ -- бесконечно малые последовательности.
         \\
-        Докажем сначала существование $\{z_n\}$. Пусть $\epsilon_0 = \frac{|b|}{2}$.
-        \[ \exists N = N(\epsilon_0): \forall n \ge N \longmapsto |y_n - b| < \frac{|b|}{2} \]
+        Докажем сначала существование $\{z_n\}$. Пусть $\varepsilon_0 = \frac{|b|}{2}$.
+        \[ \exists N = N(\varepsilon_0): \forall n \ge N \longmapsto |y_n - b| < \frac{|b|}{2} \]
         \[ \frac{|b|}{2} < y_n < \frac{3|b|}{2} \]
         \[ \frac{1}{y_n} < \frac{2}{|b|} \]
-        Видно, что $\{y_n\}$ с $N(\epsilon_0)$ не равна $0$, и что последовательность $\{\frac{1}{y_n}\}$ ограничена.
+        Видно, что $\{y_n\}$ с $N(\varepsilon_0)$ не равна $0$, и что последовательность $\{\frac{1}{y_n}\}$ ограничена.
         \\
         Последовательность $\{c_n\}$, где $c_n = \frac{x_n}{y_n} - \frac{a}{b} = \frac{a_n + a}{b_n + b} - \frac{a}{b} =
         \frac{b a_n + ab - ab - a b_n}{b(b_n + b)} = \frac{1}{b_n + b}(a_n - \frac{a}{b} b_n)$, -- бесконечно мала как произведение ограниченной
@@ -335,8 +335,8 @@
         \\
         \textbf{Доказательство:}
         Пуcть $a < b$:
-        \[ \epsilon_0 = b - a \]
-        \[ \exists n_1 = n_1(\epsilon_0) \ge n_0: \forall n \ge n_1 \longmapsto |x_n - a| < b - a \]
+        \[ \varepsilon_0 = b - a \]
+        \[ \exists n_1 = n_1(\varepsilon_0) \ge n_0: \forall n \ge n_1 \longmapsto |x_n - a| < b - a \]
         \[ x_n - a < b - a \]
         \[ x_n < b \]
         что противоречит тому, что $x_n \ge b $
@@ -347,9 +347,9 @@
         \\
         \textbf{Доказательство:}
         Пуcть $a < b$:
-        \[ \epsilon_0 = \frac{b - a}{2} \]
-        \[ \exists n_1 = n_1(\epsilon_0) \ge n_0: \forall n \ge n_1 \longmapsto |x_n - a| < \frac{b - a}{2} \]
-        \[ \exists n_2 = n_2(\epsilon_0) \ge n_0: \forall n \ge n_2 \longmapsto |y_n - b| < \frac{b - a}{2} \]
+        \[ \varepsilon_0 = \frac{b - a}{2} \]
+        \[ \exists n_1 = n_1(\varepsilon_0) \ge n_0: \forall n \ge n_1 \longmapsto |x_n - a| < \frac{b - a}{2} \]
+        \[ \exists n_2 = n_2(\varepsilon_0) \ge n_0: \forall n \ge n_2 \longmapsto |y_n - b| < \frac{b - a}{2} \]
         \[ x_n < a + \frac{b - a}{2} = \frac{b + a}{2} \]
         \[ b - \frac{b - a}{2} = \frac{b + a}{2} < y_n \]
         \[ x_n < y_n \]
@@ -363,9 +363,9 @@
         \textbf{Доказательство:}
         \[ x_n - a \ge y_n - a \ge z_n - a \]
         \[ |y_n - a| \le \max(|x_n - a|, |z_n - a|) \]
-        \[ \forall \epsilon > 0 \exists N_1 = N_1(\epsilon_0): \forall n \ge N_1 \longmapsto |x_n - a| < \epsilon \]
-        \[ \forall \epsilon > 0 \exists N_2 = N_2(\epsilon_0): \forall n \ge N_2 \longmapsto |z_n - a| < \epsilon \]
-        \[ \forall \epsilon > 0 \exists N = \max(N_1(\epsilon_0), N_2(\epsilon_0)): \forall n \ge N_2 \longmapsto |y_n - a| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N_1 = N_1(\varepsilon_0): \forall n \ge N_1 \longmapsto |x_n - a| < \varepsilon \]
+        \[ \forall \varepsilon > 0 \exists N_2 = N_2(\varepsilon_0): \forall n \ge N_2 \longmapsto |z_n - a| < \varepsilon \]
+        \[ \forall \varepsilon > 0 \exists N = \max(N_1(\varepsilon_0), N_2(\varepsilon_0)): \forall n \ge N_2 \longmapsto |y_n - a| < \varepsilon \]
     
     \subsection*{Теорема  Вейерштрасса  о  пределе  монотонной  ограниченной  последовательности}
         \textbf{Теорема:} Если последовательность $\{x_n\}$ ограничена и монотонна, то она сходится к своей точной верхней грани (если она неубывает или возрастает),
@@ -373,10 +373,10 @@
         \\
         \textbf{Доказательство:}
         пусть $\{x_n\}$ возрастает. 
-        \[ a = \sup \{x_n\} \implies \forall \epsilon \exists N = N(\epsilon): x_{N} > a - \epsilon \]
-        \[ 0 \le a - x_{N} < \epsilon \]
+        \[ a = \sup \{x_n\} \implies \forall \varepsilon \exists N = N(\varepsilon): x_{N} > a - \varepsilon \]
+        \[ 0 \le a - x_{N} < \varepsilon \]
         так как $\{x_n\}$ возрастает
-        \[ \forall n > N \longmapsto x_n > x_N \implies 0 \le a - x_{n} < a - x_{N} < \epsilon \]
+        \[ \forall n > N \longmapsto x_n > x_N \implies 0 \le a - x_{n} < a - x_{N} < \varepsilon \]
         следовательно $\{x_n\}$ сходится к $a = \sup \{x_n\}$.
         
         
@@ -452,7 +452,7 @@
     \subsection*{Критерий Коши существования конечного предела последовательности}
         \subsubsection*{Фундаментальная последовательность}
         Если для последовательности $\{x_n\}$ выполняется следующее условие:
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n,m \ge N \longmapsto |x_n - x_m| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n,m \ge N \longmapsto |x_n - x_m| < \varepsilon \]
         то она называется фундаментальной.
         
         \subsubsection*{Критерий Коши}
@@ -462,19 +462,19 @@
         \textbf{Доказательство:}
         \\
         Необходимость: пусть $\lim_{n\to\infty} x_n = a$. Тогда:
-        \[ \forall \epsilon > 0 \exists N = N(\epsilon): \forall n, m \ge N \longmapsto |x_n - a| < \frac{\epsilon}{2} \wedge |x_m - a| < \frac{\epsilon}{2} \]
-        \[ \frac{-\epsilon}{2} < x_n - a < \frac{\epsilon}{2} \]
-        \[ \frac{-\epsilon}{2} < a - x_m < \frac{\epsilon}{2} \]
-        \[ -\epsilon < x_n - x_m < \epsilon \]
-        \[ |x_n - x_m| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N = N(\varepsilon): \forall n, m \ge N \longmapsto |x_n - a| < \frac{\varepsilon}{2} \wedge |x_m - a| < \frac{\varepsilon}{2} \]
+        \[ \frac{-\varepsilon}{2} < x_n - a < \frac{\varepsilon}{2} \]
+        \[ \frac{-\varepsilon}{2} < a - x_m < \frac{\varepsilon}{2} \]
+        \[ -\varepsilon < x_n - x_m < \varepsilon \]
+        \[ |x_n - x_m| < \varepsilon \]
         следовательно, $\{x_n\}$ -- фундаментальная.
         \\
         Достаточность: если $\{x_n\}$ фундаментальная, то она ограничена, следовательно у нее есть подпоследовательность $\{x_{k_n}\}$, сходящаяся к $a$:
-        \[ \forall \epsilon > 0 \exists N_1 = N_1(\epsilon): \forall n \ge N_1 \longmapsto |x_{k_n} - a| < \frac{\epsilon}{2} \]
+        \[ \forall \varepsilon > 0 \exists N_1 = N_1(\varepsilon): \forall n \ge N_1 \longmapsto |x_{k_n} - a| < \frac{\varepsilon}{2} \]
         Так как $\{x_n\}$ фундаментальная:
-        \[ \forall \epsilon > 0 \exists N_2 = N_2(\epsilon): \forall n,m \ge N_2 \longmapsto |x_n - x_m| < \frac{\epsilon}{2} \]
-        \[ \forall \epsilon > 0 \exists N = \max(N_1(\epsilon), N_2(\epsilon)): \forall n \ge N \longmapsto |x_n - a| = |x_n - x_{k_N} + x_{k_N} - a|
-        \le |x_n - x_{k_N}| + |x_{k_N} - a| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \]
+        \[ \forall \varepsilon > 0 \exists N_2 = N_2(\varepsilon): \forall n,m \ge N_2 \longmapsto |x_n - x_m| < \frac{\varepsilon}{2} \]
+        \[ \forall \varepsilon > 0 \exists N = \max(N_1(\varepsilon), N_2(\varepsilon)): \forall n \ge N \longmapsto |x_n - a| = |x_n - x_{k_N} + x_{k_N} - a|
+        \le |x_n - x_{k_N}| + |x_{k_N} - a| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon \]
         следовательно, $\{x_n\}$ сходится к $a$.
         
         
@@ -485,7 +485,7 @@
         Далее подразумевается, что функция $f(x)$ определена в некой выколотой $\Delta$ окрестности точки $x_0$: $X = \{x: 0 < |x - x_0| < \Delta\}$.
         \subsubsection*{Предел функции в точке по Коши}
         Число $a = \lim_{x \to x_0} f(x)$ называется пределом функции $f(x)$ в точке $x_0$, если:
-        \[ \forall \epsilon > 0 \exists \delta = \delta(\epsilon)> 0: \forall x \in X: 0 < |x - x_0| < \delta \longmapsto |f(x) - f(x_0)| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon)> 0: \forall x \in X: 0 < |x - x_0| < \delta \longmapsto |f(x) - f(x_0)| < \varepsilon \]
     
     \subsubsection*{Предел функции а точке по Гейне}
         Последовательностью Гейне назовем сходящуюся к $x_0$ последовательность $\{x_n\}$, где $x_n \neq x_0$.
@@ -499,14 +499,14 @@
         \textbf{Доказательство:}
         \\
         Пусть $a$ -- предел функции в точке $x_0$ по Коши:
-        \[ \forall \epsilon > 0 \exists \delta = \delta(\epsilon): \forall x \in X: 0 < |x_n - x_0| < \delta \]
-        Для любой последовательности Гейне, сходящейся к $x_0$, найдется $N = N(\delta) = N(\epsilon): 
-        \forall n \ge N \longmapsto 0 < |x_n - x_0| < \delta \implies |f(x_n) - a| < \epsilon \implies \lim_{n \to \infty} f(x_n) = a$. $f(x_n)$ сходится к $a$ для произвольной последовательности
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon): \forall x \in X: 0 < |x_n - x_0| < \delta \]
+        Для любой последовательности Гейне, сходящейся к $x_0$, найдется $N = N(\delta) = N(\varepsilon): 
+        \forall n \ge N \longmapsto 0 < |x_n - x_0| < \delta \implies |f(x_n) - a| < \varepsilon \implies \lim_{n \to \infty} f(x_n) = a$. $f(x_n)$ сходится к $a$ для произвольной последовательности
         Гейне, следовательно $a$ -- предел $f(x)$ в точке $x_0$ по Гейне.
         \\
         Пусть $a$ -- предел функции в точке $x_0$ по Гейне, а по Коши он не равен $a$:
-        \[ \exists \epsilon_0 > 0: \forall \delta > 0 \exists x_\delta: 0 < |x_\delta - x_0| < \delta \longmapsto |f(x_\delta) - a| \ge \epsilon_0 \]
-        \[\delta_n = \frac{1}{n} > 0 \implies \exists x_n: 0 < |x_n - x_0| < \delta_n \longmapsto |f(x_n) - a| \ge \epsilon_0 \]
+        \[ \exists \varepsilon_0 > 0: \forall \delta > 0 \exists x_\delta: 0 < |x_\delta - x_0| < \delta \longmapsto |f(x_\delta) - a| \ge \varepsilon_0 \]
+        \[\delta_n = \frac{1}{n} > 0 \implies \exists x_n: 0 < |x_n - x_0| < \delta_n \longmapsto |f(x_n) - a| \ge \varepsilon_0 \]
         То есть существует такая сходящаяся к $x_0$ последовательность Гейне $\{x_n\}$, для которой $\{f(x_n)\}$ не сходится к $a$, что противоречит тому, что $a$ -- предел по Гейне.  
     
     \subsection*{Свойства пределов функции}
@@ -514,27 +514,27 @@
     
     \subsection*{Критерий Коши существования конечного предела функции}
         Функция $f(x)$ удовлетворяет условию Коши в точке $x_0$, если:
-        \[ \forall \epsilon > 0 \exists \delta = \delta(\epsilon): \forall x_1, x_2 \in X: 0 < |x_1 - x_0| < \delta \wedge 0 < |x_2 - x_0| < \delta \longmapsto
-        |f(x_1) - f(x_2)| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon): \forall x_1, x_2 \in X: 0 < |x_1 - x_0| < \delta \wedge 0 < |x_2 - x_0| < \delta \longmapsto
+        |f(x_1) - f(x_2)| < \varepsilon \]
         \textbf{Теорема:} для того, чтобы функция $f(x)$ в имела конечный предел в точке $x_0$, необходимо и достаточно, чтобы она удовлетворяла условию Коши в точке $x_0$.
         \\
         \textbf{Доказательство:}
         \\
         Необходимость: пусть $a = \lim_{x \to x_0} f(x)$:
-        \[ \forall \epsilon > 0 \exists \delta = \delta(\epsilon) > 0: \forall x_1, x_2 \in X: 0 < |x_1 - x_0| < \delta \wedge 0 < |x_2 - x_0| < \delta \longmapsto
-        |(f(x_1) - f(x_0)| < \frac{\epsilon}{2} \wedge |(f(x_0) - f(x_2)| < \frac{\epsilon}{2} \]
-        \[ -\frac{\epsilon}{2} < f(x_1) - f(x_0) < \frac{\epsilon}{2} \]
-        \[ -\frac{\epsilon}{2} < f(x_0) - f(x_2) < \frac{\epsilon}{2} \]
-        \[ -\epsilon < f(x_1) - f(x_2) < \epsilon \]
-        \[ |f(x_1) - f(x_2)| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon) > 0: \forall x_1, x_2 \in X: 0 < |x_1 - x_0| < \delta \wedge 0 < |x_2 - x_0| < \delta \longmapsto
+        |(f(x_1) - f(x_0)| < \frac{\varepsilon}{2} \wedge |(f(x_0) - f(x_2)| < \frac{\varepsilon}{2} \]
+        \[ -\frac{\varepsilon}{2} < f(x_1) - f(x_0) < \frac{\varepsilon}{2} \]
+        \[ -\frac{\varepsilon}{2} < f(x_0) - f(x_2) < \frac{\varepsilon}{2} \]
+        \[ -\varepsilon < f(x_1) - f(x_2) < \varepsilon \]
+        \[ |f(x_1) - f(x_2)| < \varepsilon \]
         следовательно, $f(x)$ удовлетворяет условию Коши в точке $x_0$.
         \\
         Достаточность: пусть $f(x)$ удовлетворяет условию Коши в точке $x_0$:
-        \[ \forall \epsilon > 0 \exists \delta = \delta(\epsilon): \forall x_1, x_2 \in X: 0 < |x_1 - x_0| < \delta \wedge 0 < |x_2 - x_0| < \delta \longmapsto
-        |f(x_1) - f(x_2)| < \epsilon \]
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon): \forall x_1, x_2 \in X: 0 < |x_1 - x_0| < \delta \wedge 0 < |x_2 - x_0| < \delta \longmapsto
+        |f(x_1) - f(x_2)| < \varepsilon \]
         Возьмем произвольную сходящуюся к $x_0$ последовательность Гейне.
-        \[ \forall \delta \exists N = N(\delta) = N(\epsilon): \forall n, m \ge N \longmapsto 0 < |x_n - x_0| < \delta \wedge 0 < |x_m - x_0| < \delta \longmapsto
-        |f(x_n) - f(x_m)| < \epsilon \]
+        \[ \forall \delta \exists N = N(\delta) = N(\varepsilon): \forall n, m \ge N \longmapsto 0 < |x_n - x_0| < \delta \wedge 0 < |x_m - x_0| < \delta \longmapsto
+        |f(x_n) - f(x_m)| < \varepsilon \]
         Следовательно $\{f(x_n)\}$ фундаментальна и сходится к некому $a$.
         \\
         Покажем, что $\{f(x_n)\}$ сходится к одному $a$ вне зависимости от выбора последовательности Гейне $\{x_n\}$.
@@ -566,11 +566,11 @@
         \textbf{Доказательство:} пусть $f(x)$ возрастает на $(a;b)$.
         Докажем существование $f(x - 0) \forall x$:
         \[ \forall x_0 \in (a;b) \forall x \in (a;x_0) \longmapsto f(x) < f(x_0) \implies \exists \sup_{(a;x_0)} f(x) = \alpha \le f(x_0)\]
-        \[ \forall \epsilon \exists x_\epsilon \in (a;x_0): f(x_\epsilon) > \alpha - \epsilon \]
-        \[ \delta = \delta(\epsilon) = x_0 - x_\epsilon > 0 \]
-        \[ \forall x: 0 < x_0 - x < \delta \longmapsto \alpha - \epsilon < f(x) \le \alpha\]
-        \[ \alpha - \epsilon < f(x) < \alpha + \epsilon \]
-        \[ |f(x) - \alpha| < \epsilon \]
+        \[ \forall \varepsilon \exists x_\varepsilon \in (a;x_0): f(x_\varepsilon) > \alpha - \varepsilon \]
+        \[ \delta = \delta(\varepsilon) = x_0 - x_\varepsilon > 0 \]
+        \[ \forall x: 0 < x_0 - x < \delta \longmapsto \alpha - \varepsilon < f(x) \le \alpha\]
+        \[ \alpha - \varepsilon < f(x) < \alpha + \varepsilon \]
+        \[ |f(x) - \alpha| < \varepsilon \]
         \[ f(x_0 - 0) = \alpha \]
         существование $f(x + 0) \forall x$ доказывается аналогичным образом.
 
@@ -1131,13 +1131,13 @@
         Найдется такое число $\Delta < \beta - \alpha$, что $g(x) > 1 \forall x \in (\alpha;\alpha + \Delta)$, следовательно $g(x)$ положительна на \intr{\alpha}{\alpha + \Delta}.
         \[ \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} = b \]
         \[ \forall \varepsilon > 0 \exists \delta_0 = \delta_0(\varepsilon) \in (0; \Delta): \forall x: \alpha < x < \alpha + \delta_0 \longmapsto
-            b - \frac{\epsilon}{2} < \frac{f'(x)}{g'(x)} < b + \frac{\epsilon}{2} \]
+            b - \frac{\varepsilon}{2} < \frac{f'(x)}{g'(x)} < b + \frac{\varepsilon}{2} \]
         \[ x_0 = \alpha + \delta_0 \]
         \[ x: \alpha < x < x_0 \]
         К отрезку \otr{x}{x_0} применим теормему Коши:
         \[ \exists \bar x \in (x; x_0):
            \frac{f(x) - f(x_0)}{g(x) - g(x_0)} = \frac{f'(\bar x)}{g'(\bar x)} \]
-        \[ b - \frac{\epsilon}{2} < \frac{f(x) - f(x_0)}{g(x) - g(x_0)} < b + \frac{\epsilon}{2} \]
+        \[ b - \frac{\varepsilon}{2} < \frac{f(x) - f(x_0)}{g(x) - g(x_0)} < b + \frac{\varepsilon}{2} \]
         \[ \frac{f(x)}{g(x)} - b = \frac{f(x_0) - b g(x_0)}{g(x)} + \left( 1 - \frac{g(x_0)}{g(x)} \right) \left( \frac{f(x) - f(x_0)}{g(x) - g(x_0)} - b \right) \]
         $g(x)$ -- бесконечно большая при $x \to \alpha$:
         \[ \forall \varepsilon > 0 \exists \delta_1 = \delta_1(\varepsilon) \in (0; \Delta): \forall x: \alpha < x < \alpha + \delta_1 \longmapsto 
