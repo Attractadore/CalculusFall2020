@@ -1099,6 +1099,7 @@
 
     \subsection*{Основные разложения по формуле Тейлора}
 
+
     \subsection*{Правило Лопиталя для раскрытия неопределенностей вида $\frac{0}{0}$}
         \theorem пусть:
         \begin {itemize}
@@ -1116,6 +1117,7 @@
         \[ \lim_{\Delta x \to 0} \frac{f'(\alpha + \theta \Delta x)}{g'(\alpha + \theta \Delta x)} = \lim_{x \to \alpha} \frac{f'(\alpha)}{g'(\alpha)} \]
         \[ \lim_{\Delta x \to 0} \frac{f(\alpha + \Delta x)}{g(\alpha + \Delta x)} = \lim_{x \to \alpha} \frac{f(\alpha)}{g(\alpha)} \]
         \[ \lim_{x \to \alpha} \frac{f(\alpha)}{g(\alpha)} = \lim_{x \to \alpha} \frac{f'(\alpha)}{g'(\alpha)} \]
+
 
     \subsection*{Правило Лопиталя для раскрытия неопределенностей вида $\frac{\infty}{\infty}$} 
         \theorem пусть:
@@ -1146,6 +1148,68 @@
         \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon) \in (0; \Delta): \forall x: \alpha < x < \alpha + \delta \longmapsto
            \left| \frac{f(x)}{g(x)} - b \right| < \varepsilon \]
         \[ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = b \]
+
+
+    \newpage
+
+    \section{}
+    \subsection*{Применение производной к исследованию функций}
+    \subsection*{Необходимые условия и достаточные условия монотонности, достаточные условия существования локального экстремума в терминах первой, второй и высших производных}
+    \subsection*{Выпуклость, точки перегиба}
+        Функция $f(x)$ выпукла вверх на интервале \intr{a}{b}, если:
+        \[ \forall x1 < x2 \in (a;b) \land \forall \alpha \ge 0, \beta \ge 0: \alpha + \beta = 1 \longmapsto f(\alpha x_1 + \beta x_2) \ge \alpha f(x_1) + \beta f(x_2) \]
+        \[ \forall x1 < x2 \in (a;b) \land \forall \alpha \ge 0, \beta \ge 0: \alpha + \beta = 1 \longmapsto f(\alpha x_1 + \beta x_2) \le \alpha f(x_1) + \beta f(x_2) \]
+        
+    \subsection*{Необходимые условия и достаточные условия выпуклости}
+    \subsection*{Асимптоты}
+        График функции $ f(x)$ имеет вертикальную асимптоту $x = x_0$, если $ \lim_{x \to x_0} f(x) = \infty $.
+        \\
+        График функции $ f(x)$ имеет наклонную асимптоту $y = kx + b$, если существуют конечные пределы
+        $ \lim_{x \to \pm \infty} \frac{f(x)}{x} = k $ и $ \lim_{x \to \pm \infty} \left( f(x) - kx \right) = b $.
+
+
+    \newpage
+    
+    \section{}
+    \subsection*{Равномерная непрерывность функции, непрерывной на отрезке}
+        \subsubsection*{Равномерная непрерыность функции на множестве}
+        Функция $f(x)$ равномерно непрерына на множестве $X$, если:
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon) > 0: \forall x', x'' \in X: |x' - x''| < \delta \longmapsto |f(x') - f(x'')| < \varepsilon \]
+
+        \subsubsection*{Модуль непрерыность функции}
+        Модулем непрерывности функции $f(x)$ называется функция:
+        \[ \omega_{f,X}(\delta) = \sup_{x', x'' \in X: |x' - x''| < \delta} |f(x') - f(x'')| \]
+        
+        \subsubsection*{Теорема Кантора}
+        \theorem функция $f(x)$, равномерно непрерывная на отрезка \otr{a}{b}, равномерно непрерывна на нем.
+        \\
+        \proof пусть это не так:
+        \[ \exists \varepsilon_0: \forall n \in \mathbb{N} \exists x_n', x_n'' \in [a;b]: |x_n' < x_n''| < \frac{1}{n} \]
+        \[ | f(x_n') - f(x_n'') | \ge \varepsilon_0 \]
+        \seq{x_n'} ограничена, следовательно она содержит сходящуюся к $c$ подпоследовательность \seq{x_{k_n}'}.
+        \[ \left| x_{k_n}' - x_{k_n}'' \right| < \frac{1}{k_n} \le \frac{1}{n} \]
+        \[ x_{k_n}' - \frac{1}{n} \le x_{k_n}'' \le x_{k_n}' + \frac{1}{n} \]
+        Следовательно, \seq{x_{k_n}''} тоже сходится к $c$. Так как \seq{x_{k_n}'} и \seq{x_{k_n}''} сходятся к $c$,
+        \seq{f(x_n') - f(x_n'')} сходится к $0$, что противоречит предположению того, что $f(x)$ не равномерно непрерывна на $[a;b]$.
+
+        \subsubsection*{Критерий равномерной непрерывности на множестве}
+        \theorem для того, чтобы функция $f(x)$ была равномерно непрерывна на множестве $X$, необходимо и достаточно,
+        чтобы предел справа ее модуля непрерывности $\omega_{f,X}(\delta)$ был равен $0$.
+        \\
+        \proof
+        \\
+        Необходимость:
+        \[ \forall \varepsilon > 0 \exists \delta_{\varepsilon} > 0: \forall x', x'' \in X: |x' - x''| < \delta_{\varepsilon}
+           \longmapsto |f(x') - f(x'')| < \frac{\varepsilon}{2} \]
+        \[ \sup_{x', x'' \in X: |x' - x''| < \delta} |f(x') - f(x'')| \le \frac{\varepsilon}{2} < \varepsilon \]
+        Следовательно, $\lim_{x \to +0} \omega_{f,X}(\delta) = 0$
+        \\
+        Достаточность:
+        \[ \lim_{x \to +0} \omega_{f,X}(\delta) = 0 \]
+        \[ \forall \varepsilon > 0 \exists \delta_{\varepsilon} > 0: \forall x', x'' \in X: |x' - x''| < \delta_{\varepsilon}
+           \longmapsto \sup_{x', x'' \in X: |x' - x''| < \delta} |f(x') - f(x'')| < \varepsilon \]
+        \[ |f(x') - f(x'')| < \varepsilon \]
+        Cледовательно, $f(x)$ равномерно непрерывна на $X$.
 
 
 \end{document}
