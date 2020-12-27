@@ -1049,8 +1049,103 @@
         
 
     \subsection*{Формула Тейлора с остаточным членом в формах Пеано и Лагранжа}
+        \subsubsection*{Формула Тейлора}
+        Пусть функция $f(x)$ $n$ раз дифференицируема в точке $x_0$. Многочлен степени $n$ $P_n(x)$ такой, что $(P_n)^{(k)}(x_0) = f^{(k)}(x_0) \forall k: 1 \le k \le n$
+        называется многочленом Тейлора $f(x)$ в точке $x_0$ и имеет следующий вид:
+        \[ P_n(x) = f(x_0) + \sum_{k=1}^{n} \frac{f^{(n)}(x_0)}{k!} (x - x_0)^k \]
+        Если $f(x)$ не является многочленом, то $P_n(x)$ задает приближение функции $f(x)$ в открестности точки $x_0$.
+        Остаточным членом $r_n(x)$ называют разность значений функции $f(x)$ и многочлена $P_n(x)$:
+        \[ r_n(x) = f(x) - P_n(x) \]
+        Формула
+        \[ f(x) = P_n(x) + r_n(x) \]
+        называется формулой Тейлора функции $f(x)$ в точке $x_0$.
+        При $x_0 = 0$ формула Тейлора называется формулой Маклорена.
+        
+        \subsubsection*{Формула Тейлора с остаточным членом в форме Лагранжа}
+        \theorem пусть $f(x)$ $n + 1$ раз дифференицируема в $\Delta$ окрестности точки $x_0$, тогда между точками $x_0$ и $x: |x - x_0| < \Delta$ найдется такая точка $\bar x$,
+        что имеет место формула Тейлора с остаточным членом в форме Лагранжа:
+        \[ r_n(x) = \frac{f^{(n+1)}(\bar x)}{(n + 1)!}(x - x_0)^{n + 1} \]
+        \proof
+        заметим, что 
+        \[ r_n(x_0) = r_n'(x_0) = ... = r_n^{(n)}(x_0) = 0 \]
+        Для функций $r_n(x)$ и $(x - x_0)^{n + 1}$ $n + 1$ раз применим теорему Коши.
+        Найдется лежащая между $x$ и $x_0$ точка $x_1$, такая, что:
+        \[ \frac{r_n(x)}{(x - x_0)^{n + 1}} = \frac{r_n'(x_1)}{(n + 1)(x_1 - x_0)^{n}} \]
+        На шаге $n + 1$ найдется между $x_n$ и $x_0$ точка $\bar x$, такая, что:
+        \[ \frac{r_n^{(n)}(x_n)}{(n + 1)!(x_n - x_0)} = \frac{r_n^{(n + 1)}(\bar x)}{(n + 1)!} \]
+        \[ \frac{r_n(x)}{(x - x_0)^{n + 1}} = \frac{r_n^{(n + 1)}(\bar x)}{(n + 1)!} \]
+        Продифференцировав формулу Тейлора $n + 1$ раз, получаем:
+        \[ f^{(n + 1)}(x) = r_n^{(n + 1)}(x) \]
+        \[ \frac{r_n(x)}{(x - x_0)^{n + 1}} = \frac{f^{(n + 1)}(\bar x)}{(n + 1)!} \]
+        \[  r_n(x) = \frac{f^{(n + 1)}(\bar x)}{(n + 1)!} (x - x_0)^{n + 1} \]
+
+        \subsubsection*{Формула Тейлора с остаточным членом в форме Пеано}
+        \theorem пусть $f(x)$ $n$ раз дифференицируема в точке $x_0$, тогда имеет место формула Тейлора с остаточным членом в форме Пеано:
+        \[ r_n(x) = o \left((x - x_0)^{n} \right) \]
+        \proof
+        заметим, что 
+        \[ r_n(x_0) = r_n'(x_0) = ... = r_n^{(n)}(x_0) = 0 \]
+        Для функций $r_n(x)$ и $(x - x_0)^n$ $n - 1$ раз применим теорему Коши.
+        Найдется лежащая между $x$ и $x_0$ точка $x_1$, такая, что:
+        \[ \frac{r_n(x)}{(x - x_0)^n} = \frac{r_n'(x_1)}{n(x_1 - x_0)^{n - 1}} \]
+        На шаге $n - 1$ найдется между $x_{n - 2}$ и $x_0$ точка $\bar x$, такая, что:
+        \[ \frac{r_n^{(n - 2)}(x_n)}{\frac{n!}{2}(x_{n - 2} - x_0)^2} = \frac{r_n^{(n - 1)}(\bar x)}{n!(\bar x - x_0)} =
+           \frac{r_n^{(n - 1)}(\bar x) - r_n^{(n - 1)}(x_0)}{n!(\bar x - x_0)} \]
+        \[ x \to x_0 \implies \bar x \to x_0 \]
+        \[ \lim_{x \to x_0} \frac{r_n^{(n - 1)}(\bar x) - r_n^{(n - 1)}(x_0)}{n!(\bar x - x_0)} = \frac{r^{(n)}(x_0)}{n!} = 0 \]
+        \[ \lim_{x \to x_0} \frac{r_n(x)}{(x - x_0)^n} = 0 \]
+        \[ r_n(x) = o \left( (x - x_0)^n \right) \]
+        
+
     \subsection*{Основные разложения по формуле Тейлора}
+
     \subsection*{Правило Лопиталя для раскрытия неопределенностей вида $\frac{0}{0}$}
+        \theorem пусть:
+        \begin {itemize}
+            \item $ \lim_{x \to \alpha} f(x) = \lim_{x \to \alpha} g(x) = 0 $
+            \item $ f(x)$ и $g(x)$ дифференицируемы на $X = \{x: 0 < |x - \alpha| < \Delta \} $
+            \item $ g'(x)\neq 0 \forall x \in X $
+            \item существует $ \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} $
+        \end {itemize}
+        Тогда существует $ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} $.
+        \\
+        \proof доопределим $f(\alpha)$ и $g(\alpha)$ как $0$.
+        Точка $\alpha + \Delta x$ принадлежит $X$. Применим к отрезку с концами $\alpha$ и $\alpha + \Delta x$ теорему Коши:
+        \[ \exists \theta: 0 < \theta < 1 \]
+        \[ \frac{f(\alpha + \Delta x) - f(\alpha)}{g(\alpha + \Delta x) - g(\alpha)} = \frac{f'(\alpha + \theta \Delta x)}{g'(\alpha + \theta \Delta x)} \]
+        \[ \lim_{\Delta x \to 0} \frac{f'(\alpha + \theta \Delta x)}{g'(\alpha + \theta \Delta x)} = \lim_{x \to \alpha} \frac{f'(\alpha)}{g'(\alpha)} \]
+        \[ \lim_{\Delta x \to 0} \frac{f(\alpha + \Delta x)}{g(\alpha + \Delta x)} = \lim_{x \to \alpha} \frac{f(\alpha)}{g(\alpha)} \]
+        \[ \lim_{x \to \alpha} \frac{f(\alpha)}{g(\alpha)} = \lim_{x \to \alpha} \frac{f'(\alpha)}{g'(\alpha)} \]
+
     \subsection*{Правило Лопиталя для раскрытия неопределенностей вида $\frac{\infty}{\infty}$} 
+        \theorem пусть:
+        \begin {itemize}
+            \item $ \lim_{x \to \alpha} f(x) = \lim_{x \to \alpha} g(x) = \pm \infty $
+            \item $ f(x)$ и $g(x)$ дифференицируемы на $X = (\alpha;\beta)$ или на $X = (\beta;\alpha)$.
+            \item $ g'(x)\neq 0 \forall x \in X $
+            \item существует $ \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} $
+        \end {itemize}
+        Тогда существует $ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} $.
+        \\
+        \proof пусть $\lim_{x \to \alpha} f(x) = \lim_{x \to \alpha} g(x) = +\infty$, $X = (\alpha;\beta)$.
+        Найдется такое число $\Delta < \beta - \alpha$, что $g(x) > 1 \forall x \in (\alpha;\alpha + \Delta)$, следовательно $g(x)$ положительна на \intr{\alpha}{\alpha + \Delta}.
+        \[ \lim_{x \to \alpha} \frac{f'(x)}{g'(x)} = b \]
+        \[ \forall \varepsilon > 0 \exists \delta_0 = \delta_0(\varepsilon) \in (0; \Delta): \forall x: \alpha < x < \alpha + \delta_0 \longmapsto
+            b - \frac{\epsilon}{2} < \frac{f'(x)}{g'(x)} < b + \frac{\epsilon}{2} \]
+        \[ x_0 = \alpha + \delta_0 \]
+        \[ x: \alpha < x < x_0 \]
+        К отрезку \otr{x}{x_0} применим теормему Коши:
+        \[ \exists \bar x \in (x; x_0):
+           \frac{f(x) - f(x_0)}{g(x) - g(x_0)} = \frac{f'(\bar x)}{g'(\bar x)} \]
+        \[ b - \frac{\epsilon}{2} < \frac{f(x) - f(x_0)}{g(x) - g(x_0)} < b + \frac{\epsilon}{2} \]
+        \[ \frac{f(x)}{g(x)} - b = \frac{f(x_0) - b g(x_0)}{g(x)} + \left( 1 - \frac{g(x_0)}{g(x)} \right) \left( \frac{f(x) - f(x_0)}{g(x) - g(x_0)} - b \right) \]
+        $g(x)$ -- бесконечно большая при $x \to \alpha$:
+        \[ \forall \varepsilon > 0 \exists \delta_1 = \delta_1(\varepsilon) \in (0; \Delta): \forall x: \alpha < x < \alpha + \delta_1 \longmapsto 
+           \left| \frac{f(x_0) - b g(x_0)}{g(x)} \right| < \frac{\varepsilon}{2} \]
+        \[ \delta = \min (\delta_0; \delta_1) \]
+        \[ \forall \varepsilon > 0 \exists \delta = \delta(\varepsilon) \in (0; \Delta): \forall x: \alpha < x < \alpha + \delta \longmapsto
+           \left| \frac{f(x)}{g(x)} - b \right| < \varepsilon \]
+        \[ \lim_{x \to \alpha} \frac{f(x)}{g(x)} = b \]
+
 
 \end{document}
